@@ -1,20 +1,25 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Rolling Dice Simulator Project.
+One AWS Lambda for Rolling Dice Processor that also saves the data in AWS S3. Another AWS Lambda for Retrieving the Data saved in AWS S3. This lambda will process Percetage and  request counter.
+Both two lambdas is Integrated in AWS API Gateway as the way of invoking and retrieving the data.
+Terraform was use as Infrastructure as Code to orchestrate the AWS Service involve nad building the whole process.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# DeploymenT and Project Dependencies
+1. AWS CLI
+2. Boto3
+3. Terraform
+4. Pycharm-CE (optional as for IDE)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Publishing the REST API's
+a. How would you publish the API?
+=> As integrated in this Project, AWS API Gateway is one of the best way I publish the API's. AWS API Gateway serves as the bridge to connect in the lambda function invoking the processes.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+b. How would you pen-test/secure the API?
+=> Single Sign On (SSO) or AWS SAML can be use to secure the API's.
+
+c. How would you test the quality of the API?
+=> Using Postman or SwaggerHub as the Test Tool for API is a great help. It can be automated or manually running the calls
+
+d. How would you monitor the Lambda functions?
+=> AWS Lambda Functions can be monitor in difference AWS Services like ClaoudWatch, AWS X-ray. It can give you Service Map and Traces to check all the processes of the Lambda Function.
