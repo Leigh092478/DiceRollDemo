@@ -1,6 +1,6 @@
-# SRE PEOps Tool Automation
-resource "aws_iam_policy" "sre_ops_tool_automation_policy" {
-  name = "sre_ops_tool_automation_policy"
+# Demo Tool Automation
+resource "aws_iam_policy" "demo_tool_automation_policy" {
+  name = "demo_tool_automation_policy"
 
   policy = <<-EOF
   {
@@ -10,34 +10,17 @@ resource "aws_iam_policy" "sre_ops_tool_automation_policy" {
               "Sid": "VisualEditor0",
               "Effect": "Allow",
               "Action": [
-                  "ssm:SendCommand",
                   "lambda:CreateFunction",
-                  "autoscaling:DescribeAutoScalingInstances",
                   "lambda:TagResource",
-                  "ec2:DescribeInstances",
-                  "ssm:ListCommands",
-                  "states:CreateActivity",
-                  "ec2:DescribeInstanceAttribute",
-                  "ec2:DescribeInstanceStatus",
-                  "autoscaling:DescribeLaunchConfigurations",
                   "s3:CreateBucket",
                   "s3:ListBucket",
-                  "s3:PutObject",
-                  "ses:SendEmail",
                   "logs:CreateLogStream",
-                  "autoscaling:DescribeAutoScalingGroups",
-                  "states:CreateStateMachine",
-                  "states:ListActivities",
                   "lambda:InvokeFunction",
-                  "ec2:DescribeTags",
-                  "ec2:CreateTags",
                   "logs:CreateLogGroup",
                   "logs:PutLogEvents",
-                  "ssm:GetCommandInvocation",
-                  "elasticloadbalancing:DescribeTargetHealth",
-                  "elasticloadbalancing:DescribeTargetGroups",
-                  "elasticloadbalancing:DescribeInstanceHealth",
-                  "states:StartExecution",
+                  "s3:PutObject",
+                  "s3:GetObject",
+                  "s3:ListAllMyBuckets",
                   "apigateway:POST"
               ],
               "Resource": "*"
@@ -47,8 +30,8 @@ resource "aws_iam_policy" "sre_ops_tool_automation_policy" {
   EOF
 }
 
-resource "aws_iam_role_policy" "sre_ops_tool_automation_auth_invocation_policy" {
-  name = "sre_ops_tool_automation_auth_invocation_policy"
+resource "aws_iam_role_policy" "demo_tool_automation_auth_invocation_policy" {
+  name = "demo_tool_automation_auth_invocation_policy"
 
   policy = <<EOF
   {

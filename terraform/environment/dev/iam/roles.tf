@@ -1,6 +1,6 @@
-# SRE PEOps Tool Automation
-resource "aws_iam_role" "sre_ops_tool_automation_lambda_execution_role" {
-  name = "sre_ops_tool_automation_lambda_exec_role"
+# Demo Tool Automation
+resource "aws_iam_role" "demo_tool_automation_lambda_execution_role" {
+  name = "demo_tool_automation_lambda_exec_role"
   assume_role_policy = <<EOF
   {
     "Version": "2012-10-17",
@@ -21,13 +21,13 @@ resource "aws_iam_role" "sre_ops_tool_automation_lambda_execution_role" {
   EOF
 }
 
-resource "aws_iam_role_policy_attachment" "sre_ops_tool_automation_policy_attachment" {
-  role       = aws_iam_role.sre_ops_tool_automation_lambda_exec_role.name  
-  policy_arn = aws_iam_policy.sre_ops_tool_automation.arn
+resource "aws_iam_role_policy_attachment" "demo_tool_automation_policy_attachment" {
+  role       = aws_iam_role.demo_tool_automation_lambda_execution_role.name
+  policy_arn = aws_iam_policy.demo_tool_automation.arn
 }
 
-resource "aws_iam_role" "sre_ops_tool_automation_authorizer_invocation_role" {
-  name = "sre_ops_tool_automation_auth_invocation"
+resource "aws_iam_role" "demo_tool_automation_authorizer_invocation_role" {
+  name = "demo_tool_automation_auth_invocation"
 
   assume_role_policy = <<EOF
   {
@@ -49,7 +49,7 @@ resource "aws_iam_role" "sre_ops_tool_automation_authorizer_invocation_role" {
   EOF
 }
 
-resource "aws_iam_role_policy_attachment" "sre_ops_tool_automation_auth_policy_attachment" {
-  role       = aws_iam_role.sre_ops_tool_automation_authorizer_invocation_role.name
-  policy_arn = aws_iam_policy.sre_ops_tool_automation_auth_invocation_policy.arn
+resource "aws_iam_role_policy_attachment" "demo_tool_automation_auth_policy_attachment" {
+  role       = aws_iam_role.demo_tool_automation_authorizer_invocation_role.name
+  policy_arn = aws_iam_policy.demo_tool_automation_auth_invocation_policy.arn
 }

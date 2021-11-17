@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
     region         = "us-east-2"
-    bucket         = "sreops-automation-dev"
-    key            = "sreops_tool/product-dev/global/automation-iam/terraform_state"
+    bucket         = "demo_tools-automation-dev"
+    key            = "demo_tool/product-dev/global/automation-iam/terraform_state"
     dynamodb_table = "product-dev-tf-state-lock"
   }
 
