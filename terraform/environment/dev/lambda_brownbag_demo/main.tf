@@ -26,11 +26,11 @@ locals {
 
 // IAM Roles
 data "aws_iam_role" "demo_tool_lambda_role" {
-  name = "sre_ops_tool_automation_lambda_exec_role"
+  name = "demo_tool_automation_lambda_exec_role"
 }
 
 data "aws_iam_role" "demo_tool_auth_role" {
-  name = "sre_ops_tool_automation_auth_invocation"
+  name = "demo_tool_automation_auth_invocation"
 }
 
 // Archiving the files
